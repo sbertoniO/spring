@@ -6,6 +6,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.santos.beans.Ciudad;
+import com.santos.beans.Jugador;
 //import com.santos.beans.AppConfig;
 //import com.santos.beans.AppConfig2;
 import com.santos.beans.Persona;
@@ -22,14 +23,8 @@ public class App {
 		//appContext.register(AppConfig2.class);
 		//reconstruir el archivo de configuración
 		//appContext.refresh();
-		
-		Persona per = (Persona) appContext.getBean("persona");
-		Ciudad ciu = (Ciudad) appContext.getBean("ciudad");
-		
-		System.out.println(per.getApodo());
-		System.out.println(ciu.getNombre());
-		
-		
+		Jugador jug = (Jugador) appContext.getBean("messi");
+		System.out.println(jug.getNombre() + " - " + jug.getEquipo().mostrar());
 		
 		((ConfigurableApplicationContext)appContext).close();
 		

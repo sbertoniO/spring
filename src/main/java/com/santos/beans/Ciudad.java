@@ -1,5 +1,8 @@
 package com.santos.beans;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 public class Ciudad {
 	
 	private String nombre;

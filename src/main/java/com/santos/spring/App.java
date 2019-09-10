@@ -24,11 +24,12 @@ public class App {
 		//appContext.refresh();
 		
 		Persona per = (Persona) appContext.getBean("persona");
+		Ciudad ciu = (Ciudad) appContext.getBean("ciudad");
+		
+		System.out.println(per.getApodo());
+		System.out.println(ciu.getNombre());
 		
 		
-		String nombresCiudades = "";
-		
-		System.out.println(per.getId() + " " + per.getNombre() + " " + per.getApodo() + " " + per.getPais().getNombre() + " " + per.getCiudad().getNombre());
 		
 		((ConfigurableApplicationContext)appContext).close();
 		

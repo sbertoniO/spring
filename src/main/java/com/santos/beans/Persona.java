@@ -1,12 +1,27 @@
 package com.santos.beans;
 
-public class Persona {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+public class Persona implements InitializingBean, DisposableBean{
 
 	private int id;
 	private String nombre;
 	private String apodo;
 	private Pais pais;
 	private Ciudad ciudad;
+	
+	/*
+	@PostConstruct
+	private void init() {
+		System.out.println("Antes de inicializar el bean persona");
+	}
+	
+	@PreDestroy
+	private void destroy() {
+		System.out.println("Bean a punto de ser destruido persona");
+	}
+	*/
 	
 	public Ciudad getCiudad() {
 		return ciudad;
@@ -46,6 +61,18 @@ public class Persona {
 
 	public void setApodo(String apodo) {
 		this.apodo = apodo;
+	}
+
+	public void afterPropertiesSet() throws Exception {
+		
+		System.out.println("After persona");
+		
+	}
+
+	public void destroy() throws Exception {
+		
+		System.out.println("Destroy persona");
+		
 	}
 	
 }

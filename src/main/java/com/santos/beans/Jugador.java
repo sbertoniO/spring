@@ -1,27 +1,19 @@
 package com.santos.beans;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Required;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
-
 import com.santos.interfaces.IEquipo;
 
-@Component("messi")
 public class Jugador {
 
-	private int number;
-	@Value("Messi")
+	private int id;
 	private String nombre;
-	@Autowired
 	private IEquipo equipo;
+	private Camiseta camiseta;
 	
-	public int getNumber() {
-		return number;
+	public int getId() {
+		return id;
 	}
-	public void setNumber(int number) {
-		this.number = number;
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getNombre() {
 		return nombre;
@@ -34,6 +26,12 @@ public class Jugador {
 	}
 	public void setEquipo(IEquipo equipo) {
 		this.equipo = equipo;
+	}
+	public Camiseta getCamiseta() {
+		return camiseta;
+	}
+	public void setCamiseta(Camiseta camiseta) {
+		this.camiseta = camiseta;
 	}
 	
 	

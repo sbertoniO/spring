@@ -1,5 +1,8 @@
 package com.santos.beans;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Marca {
 	
 	private int id;
